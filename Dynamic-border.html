@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background and Border</title>
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin:  0;
+            padding: 0;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease-in-out, border 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const imagearray = [
+            'Got.jpg',
+            'map_got.jpg',
+            'throne.jpg',
+            'house_stark.jpg',
+            'Rob_Stark.jpg',
+            'Ned_Stark.jpg',
+            'John_Snow.jpg',
+            'House_Lannister.jpg',
+            'Jaime_Lannister.jpg',
+            'tyrion.jpg',
+            'cersei_lannister.jpg',
+            'khaleesi.jpg',
+            'dragon.jpg',
+            'war.jpg',
+            'Night_king.jpg',
+             
+
+        ];
+        const borderColors = [
+            "#ff0000", 
+            "#40ff00", 
+            "#4000ff", 
+            "#000000"
+        ];
+
+        let i = 0;
+        const change = () => {
+            document.body.style.backgroundImage = `url(${imagearray[i]})`;
+            document.body.style.border = `10px solid ${borderColors[i]}`;
+            i = (i + 1) % imagearray.length;
+        };
+
+        setInterval(change, 1000);
+    </script>
+</body>
+</html>
+
